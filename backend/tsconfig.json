@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es6",                          /* Set the JavaScript version for the output file */
+    "module": "commonjs",                     /* This is the most important change. It specifies the module system */
+    "outDir": "./dist",                       /* Directory for compiled output */
+    "rootDir": "./src",                       /* Root directory of your source files */
+    "strict": true,                           /* Enable strict type-checking */
+    "esModuleInterop": true,                  /* Allows 'import express from "express"' syntax */
+    "resolveJsonModule": true,                /* This allows you to import the cities.json file directly */
+    "skipLibCheck": true,                     /* Skip type checking of all declaration files (*.d.ts) */
+    "forceConsistentCasingInFileNames": true  /* Ensure that casing is correct in imports */
+  },
+  "include": ["src/**/*"], // Tells TypeScript to only compile files within the src folder
+  "exclude": ["node_modules"]
+}
