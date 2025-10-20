@@ -1,10 +1,11 @@
 import { Router, Request, Response } from 'express';
 import { getWeatherData } from '../services/weather.service';
+import { checkJwt } from '../middleware/auth.middleware';
 
 const router = Router();
 
-// Define the GET endpoint for weather
-router.get('/weather', async (req: Request, res: Response) => {
+// Secure GET endpoint for weather
+router.get('/weather', checkJwt, async (req: Request, res: Response) => {
   try {
     const data = await getWeatherData();
     res.status(200).json(data);
