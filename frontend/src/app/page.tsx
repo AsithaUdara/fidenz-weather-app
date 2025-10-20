@@ -60,11 +60,16 @@ export default function Home() {
   if (!user) return <LoginModal />;
 
   return (
-    <div className="max-w-5xl mx-auto">
-      {loading && <p className="text-center text-xl mt-10">Loading Data...</p>}
+    <div className="max-w-7xl mx-auto px-4">
+      {loading && (
+        <div className="flex justify-center items-center mt-10">
+          <div className="h-8 w-8 animate-spin rounded-full border-3 border-white/30 border-t-white" />
+          <p className="ml-3 text-xl">Loading Data...</p>
+        </div>
+      )}
       {error && <p className="text-center text-red-400 text-xl mt-10">{error}</p>}
       {!loading && !error && (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pb-12">
           {allWeatherData.map((cityData) => (
             <WeatherCard key={cityData.name} data={cityData} />
           ))}
